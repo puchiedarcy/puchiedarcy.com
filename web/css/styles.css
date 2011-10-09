@@ -92,7 +92,6 @@ a:hover
     border: 4px solid #3923C7;
     text-align: center;
     background-color: #0B0096;
-    border-radius: 20px;
 }
 
 .navigation
@@ -101,7 +100,6 @@ a:hover
     border: 4px solid #62D245;
     width: 150px;
     background-color: #33A819;
-    border-radius: 20px;
 }
 
 .navigation .recent
@@ -153,7 +151,6 @@ a:hover
     vertical-align: top;
     border: 4px solid #D3202A;
     background-color: #960000;
-    border-radius: 20px;
 }
 
 .footer
@@ -161,7 +158,6 @@ a:hover
     border: 4px solid #BDB221;
     text-align: center;
     background-color: #9C910C;
-    border-radius: 20px;
 }
 
 .footer a
