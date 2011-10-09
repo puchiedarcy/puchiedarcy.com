@@ -1,6 +1,6 @@
 <p>Welcome to Retro Game Achievements!</p>
 <p>Use <a href="#">Retro Game Achivements</a> to track your performance in retro games.</p>
-<p>Discover <a href="/secret2">secrets</a>, learn new tips and tricks, or just beat as many games as possible!</p>
+<p>Discover <a href="/blog/index">secrets</a>, learn new tips and tricks, or just beat as many games as possible!</p>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 <p>Repudiare intellegat sadipscing ius ea, ne eum diam albucius adolescens. Ei his nullam ignota. Noster luptatum intellegebat et his. Ad modus zril quando vix. No aliquam aliquando est, vis ut harum nusquam disputationi. Vix no wisi verear virtute.</p>

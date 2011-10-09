@@ -1,7 +1,7 @@
 <?php
 class frontController
 {
-    private $libs = array("core", "data");
+    private $libs = array("core", "services");
     private $documentRoot;
     private $resourceName;
     private $action;
@@ -9,6 +9,14 @@ class frontController
     
     public function __construct($documentRoot, $uri, $method, $postData)
     {
+        foreach ($this->libs as $libName)
+        {
+            foreach (glob("../$libName/*.php") as $filepath)
+            {
+                require_once "$filepath";
+            }
+        }
+        
         $this->documentRoot = $documentRoot;
         
         $this->ParseURI($uri);

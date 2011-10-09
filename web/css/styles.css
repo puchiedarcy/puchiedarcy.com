@@ -169,3 +169,42 @@ a:hover
 {
     color: #C6C6C6;
 }
+
+.blogPost
+{
+    padding-bottom: 10px;
+}
+
+.blogPost .title
+{
+    font-size: 2em;
+}
+
+.blogPost .metaLeft
+{
+    font-size: 10pt;
+    float: left;
+}
+
+.blogPost .metaRight
+{
+    font-size: 10pt;
+    float: right;
+}
+
+.blogPost .tag
+{
+    border: 2px solid #BDB221;
+    background-color: #9C910C;
+    border-radius: 5px;
+    padding: 2px;
+    margin: 0 5px;
+}
+
+.blogPost .body
+{
+    clear: both;
+    padding: 10px 0;
+    border-bottom: 2px dashed #BDB221;
+    text-indent: 20px;
+}

@@ -1,4 +1,4 @@
-<div class="brand"><a href="#">PopularGirlsOnly.com</a></div>
+<div class="brand"><a href="/">PopularGirlsOnly.com</a></div>
 <ul>
     <li><a href="#nes">NES</a></li>
     <li><a href="#gb" class="active">GB</a></li>
