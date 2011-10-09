@@ -1,0 +1,171 @@
+@font-face
+{
+    font-family: yoster;
+    src: url('/css/yoster.ttf');
+} 
+
+body
+{
+    font-family: yoster;
+    background-color:#636363;
+    padding-top:60px;
+    color:#DEDEDE;
+}
+
+a
+{
+    color: #C38EF0;
+}
+
+a:hover
+{
+    color: #844FB1;
+}
+
+.layout
+{
+    width:777px;
+    margin:0 auto;
+    border:0px solid #DEDEDE;
+    border-spacing: 6px;
+}
+
+.layout td
+{
+    padding: 4px;
+}
+
+.topbar
+{
+    position: fixed;
+    height: 40px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 200001;
+    overflow: visible;
+    background-color: #1E1E1E;
+    font-size: 20px;
+    line-height: 40px;
+}
+
+.topbar .brand
+{
+    margin-left: 15px;
+    float: left;
+}
+
+.topbar ul
+{
+    list-style-type: none;
+    float: left;
+    padding: 0;
+    margin: 0;
+    margin-left: 20px;
+}
+
+.topbar li
+{
+    float: left;
+    margin-left: 10px;
+}
+
+.topbar a
+{
+    color:#DEDEDE;
+    text-decoration: none;
+}
+
+.topbar a:hover
+{
+    color: #C38EF0;
+    text-decoration: none;
+}
+
+.topbar  .active
+{
+    color: #C38EF0;
+}
+
+.header
+{
+    border: 4px solid #3923C7;
+    text-align: center;
+    background-color: #0B0096;
+}
+
+.navigation
+{
+    vertical-align: top;
+    border: 4px solid #62D245;
+    width: 150px;
+    background-color: #33A819;
+}
+
+.navigation .recent
+{
+    margin-top: 30px;
+}
+
+.navigation p
+{
+    margin: 0;
+}
+
+.navigation a
+{
+    color: #DEDEDE;
+}
+
+.navigation ul
+{
+    list-style-type: none;
+    margin: 0 10px;
+    padding: 0;
+    width: 130px;
+    font-size: 10pt;
+}
+
+.navigation .ellipsis 
+{
+    white-space: nowrap;  
+    overflow: hidden;  
+    text-overflow: ellipsis;  
+}
+
+.navigation a.tooltip span
+{
+    display: none;
+}
+
+.navigation a.tooltip:hover span
+{
+    display: inline;
+    position: absolute;
+    background: #33A819;
+    border: 2px solid #62D245;
+}
+
+.content
+{
+    vertical-align: top;
+    border: 4px solid #D3202A;
+    background-color: #960000
+}
+
+.footer
+{
+    border: 4px solid #BDB221;
+    text-align: center;
+    background-color: #9C910C
+}
+
+.footer a
+{
+    color: #DEDEDE;
+}
+
+.footer a:hover
+{
+    color: #C6C6C6;
+}

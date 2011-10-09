@@ -1,0 +1,13 @@
+<VirtualHost *:80>
+        ServerAdmin puchiedarcy@puchiedarcy.com
+
+        DocumentRoot /srv/puchiedarcy.com
+
+        ErrorLog /var/log/apache2/error.log
+
+        # Possible values include: debug, info, notice, warn, error, crit,
+        # alert, emerg.
+        LogLevel warn
+
+        CustomLog /var/log/apache2/access.log combined
+</VirtualHost>
