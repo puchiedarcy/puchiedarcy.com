@@ -178,6 +178,7 @@ a:hover
 .blogPost .title
 {
     font-size: 2em;
+    margin-bottom: 7px;
 }
 
 .blogPost .metaLeft

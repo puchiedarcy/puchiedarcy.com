@@ -1,0 +1,1 @@
+mysql -u root -proot puchiedarcycom < testdata.sql

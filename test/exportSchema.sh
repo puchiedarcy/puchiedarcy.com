@@ -1,0 +1,1 @@
+mysqldump --no-data --tables -u root -proot puchiedarcycom > schema.sql

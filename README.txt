@@ -31,4 +31,5 @@ puchiedarcy.com
     4a. Install mysql: sudo apt-get install mysql-server
     4b. Install php5-mysql connector: sudo apt-get install php5-mysql
     4c. Make database and user: GRANT ALL PRIVILEGES ON mydb.* TO 'myuser'@'localhost' IDENTIFIED BY 'mypassword';
-    4d. Restart apache.
+    4d. Flush: FLUSH PRIVILEGES;
+    4e. Restart apache.

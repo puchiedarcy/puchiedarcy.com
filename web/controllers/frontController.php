@@ -1,7 +1,7 @@
 <?php
 class frontController
 {
-    private $libs = array("core", "services");
+    private $libs = array("core", "services", "data");
     private $documentRoot;
     private $resourceName;
     private $action;

@@ -16,12 +16,12 @@ class blogController extends baseController
     */
     public function addPost($data)
     {
-        $blogPost = new BlogPost($data["title"], $data["body"], array("fork", "spoon"), $data["date"]);
+        $blogPost = new BlogPost(0, $data["title"], $data["author"], $data["body"], array("fork", "spoon"), $data["date"]);
         
         $blogService = new BlogService();
         $blogService->AddBlogPost($blogPost);
         
-        $this->viewResult->viewName = "add";
+        $this->viewResult->viewName = "index";
         
         return $this->viewResult;
     }

@@ -17,7 +17,7 @@
                     echo $tagStr;
                 ?>
             </div>
-            <p class="body"><?php echo str_replace("\n", "<br><br>", $blogPost->Body()); ?></p>
+            <p class="body"><?php echo str_replace("\n", "<br>", $blogPost->Body()); ?></p>
         </div>
         <?php
     }
