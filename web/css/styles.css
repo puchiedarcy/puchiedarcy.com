@@ -193,6 +193,7 @@ a:hover
 {
     font-size: 10pt;
     float: right;
+    margin-right: 8px;
 }
 
 .blogPost .tag
