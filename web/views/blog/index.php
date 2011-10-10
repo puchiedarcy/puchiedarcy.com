@@ -12,7 +12,8 @@
                     $tagStr = "";
                     foreach ($blogPost->Tags() as $tag)
                     {
-                        $tagStr = $tagStr . "<span class='tag'>$tag</span>";
+                        $tagName = $tag->Name();
+                        $tagStr = $tagStr . "<span class='tag'>$tagName</span>";
                     }
                     echo $tagStr;
                 ?>

@@ -17,4 +17,9 @@ class BlogService
     {
         return $this->blogPostRepository->GetBlogPosts();
     }
+    
+    public function GetTags()
+    {
+        return $this->blogPostRepository->GetTags();
+    }
 }

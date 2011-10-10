@@ -16,7 +16,15 @@ class blogController extends baseController
     */
     public function addPost($data)
     {
-        $blogPost = new BlogPost(0, $data["title"], $data["author"], $data["body"], array("fork", "spoon"), $data["date"]);
+        $tags = array();
+        
+        $splitTags = explode(",", $data["tags"]);
+        foreach ($splitTags as $splitTag)
+        {
+            array_push($tags, new Tag(0, trim($splitTag)));
+        }
+        
+        $blogPost = new BlogPost(0, $data["title"], $data["author"], $data["body"], $tags, $data["date"]);
         
         $blogService = new BlogService();
         $blogService->AddBlogPost($blogPost);
