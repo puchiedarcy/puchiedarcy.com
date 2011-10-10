@@ -21,7 +21,8 @@ class blogController extends baseController
         $splitTags = explode(",", $data["tags"]);
         foreach ($splitTags as $splitTag)
         {
-            array_push($tags, new Tag(0, trim($splitTag)));
+            if (trim($splitTag) == "") continue;
+            array_push($tags, new Tag(0, $splitTag));
         }
         
         $blogPost = new BlogPost(0, $data["title"], $data["author"], $data["body"], $tags, $data["date"]);

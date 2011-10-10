@@ -7,7 +7,7 @@ class Tag
     function __construct($id, $name)
     {
         $this->id = $id;
-        $this->name = $name;
+        $this->name = trim($name);
     }
     
     public function Id()

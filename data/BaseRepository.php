@@ -32,6 +32,11 @@ abstract class BaseRepository
         return $results;
     }
     
+    function GetLastInsertId()
+    {
+        return mysql_insert_id($this->conn);
+    }
+    
     function Escape($string)
     {
         $string = mysql_real_escape_string($string);

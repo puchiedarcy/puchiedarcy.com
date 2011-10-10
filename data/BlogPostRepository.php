@@ -23,7 +23,8 @@ class BlogPostRepository extends BaseRepository
         $date = $blogPost->Date();
         $body = $blogPost->Body();
         
-        $blogPost_id = $this->Execute("INSERT INTO blogPosts (title, author, date, body) VALUES ('$title', '$author', $date, '$body');");
+        $this->Execute("INSERT INTO blogPosts (title, author, date, body) VALUES ('$title', '$author', $date, '$body');");
+        $blogPost_id = $this->GetLastInsertId();
         
         $tags = $blogPost->Tags();
         foreach ($tags as $tag)
@@ -102,7 +103,11 @@ class BlogPostRepository extends BaseRepository
     {
         $name = $tag->Name();
         
-        return $this->Execute("INSERT INTO tags (name) VALUES ('$name');");
+        if ($name == "") return;
+        
+        $this->Execute("INSERT INTO tags (name) VALUES ('$name');");
+        
+        return $this->GetLastInsertId();
     }
     
     private function SaveBlogPostTag($blogPost_id, $tag_id)
