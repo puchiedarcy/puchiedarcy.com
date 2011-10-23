@@ -4,7 +4,7 @@
     {
         ?>
         <div class="blogPost">
-            <div class="title"><?php echo $blogPost->Title(); ?></div>
+            <div class="title"><a href="/blog/single?id=<?php echo $blogPost->Id(); ?>"><?php echo $blogPost->Title(); ?></a></div>
             <div class="metaLeft"></div>
             <div class="metaRight"><?php echo date("D, M d Y", $blogPost->Date()); ?></div>
             <p class="body"><?php echo str_replace("\n", "<br>", $blogPost->Body()); ?></p>

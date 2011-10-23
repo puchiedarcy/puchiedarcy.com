@@ -166,12 +166,12 @@ a:hover
     background-color: #9C910C;
 }
 
-.footer a, .blogPost .tag a
+.footer a, .blogPost .tag a, .blogPost .title a
 {
     color: #DEDEDE;
 }
 
-.footer a:hover, .blogPost .tag a:hover
+.footer a:hover, .blogPost .tag a:hover, .blogPost .title a:hover
 {
     color: #C6C6C6;
 }
@@ -210,7 +210,7 @@ a:hover
     margin: 0 5px;
 }
 
-.blogPost .tag a, .blogPost .tag a:hover
+.blogPost .tag a, .blogPost .tag a:hover, .blogPost .title a, .blogPost .title a:hover
 {
     text-decoration: none;
 }
