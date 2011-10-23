@@ -1,4 +1,4 @@
-<h3>Recent Stuff</h3>
+<h4>Recent Stuff</h4>
 <?php
     foreach($viewModel->recentStuff as $tagName => $blogPosts)
     {
