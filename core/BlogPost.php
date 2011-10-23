@@ -3,16 +3,14 @@ class BlogPost
 {
     private $id;
     private $title;
-    private $author;
     private $body;
     private $tags;
     private $date;
     
-    function __construct($id, $title, $author, $body, $tags, $date)
+    function __construct($id, $title, $body, $tags, $date)
     {
         $this->id = $id;
         $this->title = $title;
-        $this->author = $author;
         $this->body = $body;
         $this->tags = $tags;
         $this->date = $date;
@@ -26,11 +24,6 @@ class BlogPost
     public function Title()
     {
         return $this->title;
-    }
-    
-    public function Author()
-    {
-        return $this->author;
     }
     
     public function Body()

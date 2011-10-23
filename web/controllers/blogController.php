@@ -25,7 +25,7 @@ class blogController extends baseController
             array_push($tags, new Tag(0, $splitTag));
         }
         
-        $blogPost = new BlogPost(0, $data["title"], $data["author"], $data["body"], $tags, $data["date"]);
+        $blogPost = new BlogPost(0, $data["title"], $data["body"], $tags, $data["date"]);
         
         $blogService = new BlogService();
         $blogService->AddBlogPost($blogPost);

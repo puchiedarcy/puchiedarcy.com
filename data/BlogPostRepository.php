@@ -5,11 +5,11 @@ class BlogPostRepository extends BaseRepository
     {
         $blogPosts = array();
         
-        $results = $this->Select("SELECT id, title, author, body, date FROM blogPosts ORDER BY date desc, id desc;");
+        $results = $this->Select("SELECT id, title, body, date FROM blogPosts ORDER BY date desc, id desc;");
         foreach ($results as $result)
         {
             $tags = $this->GetBlogPostTags($result["id"]);
-            $blogPost = new BlogPost($result["id"], $result["title"], $result["author"], $result["body"], $tags, $result["date"]);
+            $blogPost = new BlogPost($result["id"], $result["title"], $result["body"], $tags, $result["date"]);
             array_push($blogPosts, $blogPost);
         }
         
@@ -19,11 +19,10 @@ class BlogPostRepository extends BaseRepository
     public function SaveBlogPost($blogPost)
     {
         $title = $blogPost->Title();
-        $author = $blogPost->Author();
         $date = $blogPost->Date();
         $body = $blogPost->Body();
         
-        $this->Execute("INSERT INTO blogPosts (title, author, date, body) VALUES ('$title', '$author', $date, '$body');");
+        $this->Execute("INSERT INTO blogPosts (title, date, body) VALUES ('$title', $date, '$body');");
         $blogPost_id = $this->GetLastInsertId();
         
         $tags = $blogPost->Tags();

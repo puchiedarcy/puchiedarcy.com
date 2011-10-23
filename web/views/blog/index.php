@@ -5,7 +5,7 @@
         ?>
         <div class="blogPost">
             <div class="title"><?php echo $blogPost->Title(); ?></div>
-            <div class="metaLeft"><?php echo $blogPost->Author(); ?></div>
+            <div class="metaLeft"></div>
             <div class="metaRight"><?php echo date("D, M d Y", $blogPost->Date()); ?></div>
             <p class="body"><?php echo str_replace("\n", "<br>", $blogPost->Body()); ?></p>
             <div class="tags">
