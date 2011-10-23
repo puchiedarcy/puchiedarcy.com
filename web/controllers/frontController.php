@@ -82,7 +82,7 @@ class frontController
     private function ParseURIPath($uriPath)
     {
         $urlArray = explode("/", $uriPath);
-        $this->resourceName = empty($urlArray[1]) ? "master" : $urlArray[1];
+        $this->resourceName = empty($urlArray[1]) ? "blog" : $urlArray[1];
         $this->action = (count($urlArray) < 3) ? "index" : $urlArray[2];
     }
     

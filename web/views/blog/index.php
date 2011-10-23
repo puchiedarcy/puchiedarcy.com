@@ -23,5 +23,4 @@
         <?php
     }
     ?>
-    <a href="/blog/add">Write a new post!</a>
 </div>

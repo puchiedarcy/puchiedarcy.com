@@ -1,9 +1,1 @@
-<p>Welcome to Retro Game Achievements!</p>
-<p>Use <a href="#">Retro Game Achivements</a> to track your performance in retro games.</p>
-<p>Discover <a href="/blog/index">secrets</a>, learn new tips and tricks, or just beat as many games as possible!</p>
-
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<p>Repudiare intellegat sadipscing ius ea, ne eum diam albucius adolescens. Ei his nullam ignota. Noster luptatum intellegebat et his. Ad modus zril quando vix. No aliquam aliquando est, vis ut harum nusquam disputationi. Vix no wisi verear virtute.</p>
-<p>Soleat apeirian interpretaris eum no, dictas fabulas his ut, mel aperiri legimus eu. Ut omnium tamquam sit. Iriure democritum ne his. Ius an minim aeque graeci. Ea duo illum dolores. Ex iuvaret labores vix, ea quot mentitum tacimates duo.</p>
-<p>Te usu bonorum scriptorem, eum odio accusamus cu. Ei solum dolor vocent nam, sit mazim principes id, vis audiam scripta saperet in. Esse singulis tacimates an quo, sit partiendo vituperata eu. Facete singulis tacimates eos at, aeterno persecuti efficiendi sed ne, ut pro audiam voluptua consectetuer. Esse molestiae intellegat an pro, eam reprehendunt vituperatoribus ei, dicam admodum voluptatum vis et.</p>
-<p>Tempor discere scriptorem eam eu, ea eos eirmod eloquentiam concludaturque. Quodsi labitur efficiantur in vel, sed an option maiestatis, mel ei agam erant. Vim in nisl repudiare. In eam tincidunt consequuntur, cu duo justo impedit maiestatis. Lorem persequeris necessitatibus qui ea, ut vel munere oportere, cum sint putent vocent te.</p>
+<iframe width="420" height="315" src="http://www.youtube.com/embed/RDsa6-xluHk" frameborder="0" allowfullscreen></iframe>

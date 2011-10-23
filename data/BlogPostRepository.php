@@ -1,11 +1,21 @@
 <?php
 class BlogPostRepository extends BaseRepository
 {
-    public function GetBlogPosts()
+    public function GetBlogPost($id)
+    {
+        return $this->GetBlogPosts("where id = $id", 1);
+    }
+
+    public function GetLastFiveBlogPosts()
+    {
+        return $this->GetBlogPosts("", 5);
+    }
+    
+    private function GetBlogPosts($where, $limit)
     {
         $blogPosts = array();
         
-        $results = $this->Select("SELECT id, title, body, date FROM blogPosts ORDER BY date desc, id desc;");
+        $results = $this->Select("SELECT id, title, body, date FROM blogPosts " . $where . " ORDER BY date desc, id desc limit " . $limit . ";");
         foreach ($results as $result)
         {
             $tags = $this->GetBlogPostTags($result["id"]);
@@ -14,6 +24,11 @@ class BlogPostRepository extends BaseRepository
         }
         
         return $blogPosts;
+    }
+    
+    public function GetLastFiveTaggedBlogPosts($tag)
+    {
+        return $this->GetBlogPosts("WHERE id IN (SELECT blogPost_id FROM blogPost_tags where tag_id = (SELECT id FROM tags WHERE name = '$tag'))", 5);
     }
     
     public function SaveBlogPost($blogPost)

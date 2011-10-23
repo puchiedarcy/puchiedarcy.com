@@ -5,7 +5,27 @@ class blogController extends baseController
     {
         $blogService = new BlogService();
         
-        $this->viewResult->viewModel->blogPosts = $blogService->GetBlogPosts();
+        $this->viewResult->viewModel->blogPosts = $blogService->GetLastFiveBlogPosts();
+        $this->viewResult->viewName = "index";
+        
+        return $this->viewResult;
+    }
+    
+    public function tags($data)
+    {
+        $blogService = new BlogService();
+        
+        $this->viewResult->viewModel->blogPosts = $blogService->GetLastFiveTaggedBlogPosts($data['tag']);
+        $this->viewResult->viewName = "index";
+        
+        return $this->viewResult;
+    }
+    
+    public function single($data)
+    {
+        $blogService = new BlogService();
+        
+        $this->viewResult->viewModel->blogPosts = $blogService->GetBlogPost($data['id']);
         $this->viewResult->viewName = "index";
         
         return $this->viewResult;

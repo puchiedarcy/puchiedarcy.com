@@ -1,7 +1,11 @@
-<div class="brand"><a href="/">PopularGirlsOnly.com</a></div>
+<div class="brand"><a href="/">PuchieDarcy.com</a></div>
 <ul>
-    <li><a href="#nes">NES</a></li>
-    <li><a href="#gb" class="active">GB</a></li>
-    <li><a href="#snes">SNES</a></li>
-    <li><a href="#n64">N64</a></li>
+<?php
+    foreach($viewModel->tags as $tag)
+    {
+    ?>
+        <li><a href="/blog/tags?tag=<?php echo $tag->Name(); ?>"><?php echo $tag->Name(); ?></a></li>
+    <?php
+    }
+?>
 </ul>
