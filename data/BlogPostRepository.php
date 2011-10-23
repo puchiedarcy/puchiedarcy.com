@@ -130,4 +130,20 @@ class BlogPostRepository extends BaseRepository
     {
         $this->Execute("INSERT INTO blogPost_tags (blogPost_id, tag_id) VALUES ($blogPost_id, $tag_id);");
     }
+    
+    public function CountBlogPosts()
+    {
+        return $this->CountBlogPostsHelper("");
+    }
+    
+    public function CountBlogPostsHelper($where)
+    {
+        $results = $this->Select("SELECT count(*) as count FROM blogPosts $where;");
+        return $results[0]["count"];
+    }
+    
+    public function CountTaggedBlogPosts($tag)
+    {
+        return $this->CountBlogPostsHelper("WHERE id IN (SELECT blogPost_id FROM blogPost_tags where tag_id = (SELECT id FROM tags WHERE name = '$tag'))");
+    }
 }
