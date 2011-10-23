@@ -4,8 +4,9 @@ class blogController extends baseController
     public function index($data)
     {
         $blogService = new BlogService();
+        $page = array_key_exists("page", $data) ? $data["page"] : 1;
         
-        $this->viewResult->viewModel->blogPosts = $blogService->GetLastFiveBlogPosts();
+        $this->viewResult->viewModel->blogPosts = $blogService->GetBlogPosts($page);
         $this->viewResult->viewName = "index";
         
         return $this->viewResult;
@@ -14,8 +15,9 @@ class blogController extends baseController
     public function tags($data)
     {
         $blogService = new BlogService();
+        $page = array_key_exists("page", $data) ? $data["page"] : 1;
         
-        $this->viewResult->viewModel->blogPosts = $blogService->GetLastFiveTaggedBlogPosts($data['tag']);
+        $this->viewResult->viewModel->blogPosts = $blogService->GetTaggedBlogPosts($data["tag"], $page);
         $this->viewResult->viewName = "index";
         
         return $this->viewResult;
@@ -25,7 +27,7 @@ class blogController extends baseController
     {
         $blogService = new BlogService();
         
-        $this->viewResult->viewModel->blogPosts = $blogService->GetBlogPost($data['id']);
+        $this->viewResult->viewModel->blogPosts = $blogService->GetBlogPost($data["id"]);
         $this->viewResult->viewName = "index";
         
         return $this->viewResult;

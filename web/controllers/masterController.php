@@ -20,7 +20,7 @@ class masterController extends baseController
         foreach($tags as $tag)
         {
             $tagName = $tag->Name();
-            $recentTaggedPosts = $blogService->GetLastFiveTaggedBlogPosts($tagName);
+            $recentTaggedPosts = $blogService->GetTaggedBlogPosts($tagName, 1);
             $recentStuff[$tagName] = $recentTaggedPosts;
         }
         

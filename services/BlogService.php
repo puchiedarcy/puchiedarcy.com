@@ -13,14 +13,14 @@ class BlogService
         $this->blogPostRepository->SaveBlogPost($blogPost);
     }
     
-    public function GetLastFiveBlogPosts()
+    public function GetBlogPosts($page)
     {
-        return $this->blogPostRepository->GetLastFiveBlogPosts();
+        return $this->blogPostRepository->GetBlogPosts($page);
     }
     
-    public function GetLastFiveTaggedBlogPosts($tag)
+    public function GetTaggedBlogPosts($tag, $page)
     {
-        return $this->blogPostRepository->GetLastFiveTaggedBlogPosts($tag);
+        return $this->blogPostRepository->GetTaggedBlogPosts($tag, $page);
     }
     
     public function GetTags()

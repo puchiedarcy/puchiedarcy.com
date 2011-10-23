@@ -3,19 +3,21 @@ class BlogPostRepository extends BaseRepository
 {
     public function GetBlogPost($id)
     {
-        return $this->GetBlogPosts("where id = $id", 1);
+        return $this->GetBlogPostsHelper("WHERE id = $id", 1);
     }
 
-    public function GetLastFiveBlogPosts()
+    public function GetBlogPosts($page)
     {
-        return $this->GetBlogPosts("", 5);
+        return $this->GetBlogPostsHelper("", $page);
     }
     
-    private function GetBlogPosts($where, $limit)
+    private function GetBlogPostsHelper($where, $page)
     {
         $blogPosts = array();
+        $pageSize = $this->pageSize;
+        $offset = ($page - 1) * $pageSize;
         
-        $results = $this->Select("SELECT id, title, body, date FROM blogPosts " . $where . " ORDER BY date desc, id desc limit " . $limit . ";");
+        $results = $this->Select("SELECT id, title, body, date FROM blogPosts $where ORDER BY date desc, id desc limit $offset, $pageSize;");
         foreach ($results as $result)
         {
             $tags = $this->GetBlogPostTags($result["id"]);
@@ -26,9 +28,9 @@ class BlogPostRepository extends BaseRepository
         return $blogPosts;
     }
     
-    public function GetLastFiveTaggedBlogPosts($tag)
+    public function GetTaggedBlogPosts($tag, $page)
     {
-        return $this->GetBlogPosts("WHERE id IN (SELECT blogPost_id FROM blogPost_tags where tag_id = (SELECT id FROM tags WHERE name = '$tag'))", 5);
+        return $this->GetBlogPostsHelper("WHERE id IN (SELECT blogPost_id FROM blogPost_tags where tag_id = (SELECT id FROM tags WHERE name = '$tag'))", $page);
     }
     
     public function SaveBlogPost($blogPost)

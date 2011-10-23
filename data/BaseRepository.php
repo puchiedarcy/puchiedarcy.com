@@ -2,6 +2,7 @@
 abstract class BaseRepository
 {
     private $conn;
+    protected $pageSize = 5;
     
     function __construct()
     {
