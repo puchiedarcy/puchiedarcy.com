@@ -10,13 +10,12 @@
             <p class="body"><?php echo str_replace("\n", "<br>", $blogPost->Body()); ?></p>
             <div class="tags">
                 <?php
-                $tagStr = "";
                 foreach ($blogPost->Tags() as $tag)
                 {
-                    $tagName = $tag->Name();
-                    $tagStr = $tagStr . "<span class='tag'>$tagName</span>";
+                    ?>
+                        <span class='tag'><a href="/blog/tags?tag=<?php echo $tag->Name(); ?>"><?php echo $tag->Name(); ?></a></span>
+                    <?php
                 }
-                echo $tagStr;
                 ?>
             </div>
         </div>

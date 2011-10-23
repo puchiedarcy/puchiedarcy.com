@@ -4,7 +4,7 @@
     {
     ?>
     <div class="recent">
-        <p><?php echo $tagName; ?></p>
+        <p><a href="/blog/tags?tag=<?php echo $tagName; ?>"><?php echo $tagName; ?></a></p>
         <ul>
         <?php
             foreach($blogPosts as $blogPost)

@@ -108,6 +108,11 @@ a:hover
     margin-top: 30px;
 }
 
+.navigation .recent p a
+{
+    text-decoration: none;
+}
+
 .navigation p
 {
     margin: 0;
@@ -161,12 +166,12 @@ a:hover
     background-color: #9C910C;
 }
 
-.footer a
+.footer a, .blogPost .tag a
 {
     color: #DEDEDE;
 }
 
-.footer a:hover
+.footer a:hover, .blogPost .tag a:hover
 {
     color: #C6C6C6;
 }
@@ -203,6 +208,11 @@ a:hover
     border-radius: 5px;
     padding: 2px;
     margin: 0 5px;
+}
+
+.blogPost .tag a, .blogPost .tag a:hover
+{
+    text-decoration: none;
 }
 
 .blogPost .body
