@@ -38,7 +38,6 @@ DROP TABLE IF EXISTS `blogPosts`;
 CREATE TABLE `blogPosts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
-  `author` varchar(255) NOT NULL,
   `date` int(11) NOT NULL,
   `body` text NOT NULL,
   PRIMARY KEY (`id`)
@@ -68,4 +67,4 @@ CREATE TABLE `tags` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2011-10-09 20:01:07
+-- Dump completed on 2011-10-23 17:25:23
