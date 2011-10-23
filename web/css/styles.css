@@ -1,12 +1,12 @@
 @font-face
 {
-    font-family: yoster;
-    src: url('/css/yoster.ttf');
+    font-family: sitefont;
+    src: url('/css/ARCADEPI.ttf');
 }
 
 body
 {
-    font-family: yoster;
+    font-family: sitefont;
     background-color:#636363;
     padding-top:60px;
     color:#DEDEDE;
@@ -47,7 +47,7 @@ a:hover
     overflow: visible;
     background-color: #1E1E1E;
     font-size: 20px;
-    line-height: 40px;
+    line-height: 45px;
 }
 
 .topbar .brand
