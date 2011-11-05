@@ -9,3 +9,4 @@
     }
 ?>
 </ul>
+<?php $front->Render($front, "login", "topbar", null); ?>

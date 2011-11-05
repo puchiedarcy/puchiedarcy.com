@@ -63,8 +63,12 @@ class frontController
         
         $controller = new $fullControllerName();
         
+        require_once $this->documentRoot . "/interceptors/BaseInterceptor.php";
+        require_once $this->documentRoot . "/interceptors/LoggedInInterceptor.php";
         require_once $this->documentRoot . "/interceptors/HTTPMethodInterceptor.php";
+        
         $controller = new HTTPMethodInterceptor($controller, $method);
+        $controller = new LoggedInInterceptor($controller, $method);
         
         return $controller->$action($data);
     }

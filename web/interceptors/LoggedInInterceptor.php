@@ -1,21 +1,16 @@
 <?php
-class AuthorizationInterceptor
-{
-    private $controller;
-    
-    public function __construct($controller)
-    {
-        $this->controller = $controller;
-    }
-    
+class LoggedInInterceptor extends BaseInterceptor
+{    
     public function __call($method, $params)
     {
-        $reflectedClass = new ReflectionClass($this->controller);
+        $decoratedController = $this->GetDecoratedController($this->controller);
+        $reflectedClass = new ReflectionClass($decoratedController);
+        
         if ($reflectedClass->HasMethod($method))
         {
             $reflectedMethod = $reflectedClass->GetMethod($method);
             $comment = $reflectedMethod->GetDocComment();
-            if ($comment && strpos($comment, " @admin" ) && !$this->controller->IsLoggedInPlayerAdmin())
+            if ($comment && strpos($comment, " @loggedIn") && !$decoratedController->IsLoggedIn())
             {
                 die("Unauthorized");
             }

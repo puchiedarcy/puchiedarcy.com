@@ -34,7 +34,7 @@ class blogController extends baseController
     }
     
     /**
-    * @post
+    * @post @loggedIn
     */
     public function addPost($data)
     {
@@ -53,6 +53,16 @@ class blogController extends baseController
         $blogService->AddBlogPost($blogPost);
         
         $this->viewResult->viewName = "index";
+        
+        return $this->viewResult;
+    }
+    
+    /**
+    * @loggedIn 
+    */
+    public function add($data)
+    {
+        $this->viewResult->viewName = "add";
         
         return $this->viewResult;
     }
