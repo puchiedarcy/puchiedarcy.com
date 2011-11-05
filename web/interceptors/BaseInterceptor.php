@@ -24,4 +24,28 @@ abstract class BaseInterceptor
             return $controller;
         }
     }
+    
+    public function __call($method, $params)
+    {
+        $decoratedController = $this->GetDecoratedController($this->controller);
+        $reflectedClass = new ReflectionClass($decoratedController);
+        
+        if ($reflectedClass->HasMethod($method))
+        {
+            $reflectedMethod = $reflectedClass->GetMethod($method);
+            $this->Intercept($reflectedMethod);
+        }
+        
+        $data = NULL;
+        if (count($params) > 0)
+        {
+            $data = $params[0];
+        }
+        
+        $returnValue = $this->controller->$method($data);
+        
+        return $returnValue;
+    }
+    
+    abstract protected function Intercept($method);
 }

@@ -9,23 +9,13 @@ class HTTPMethodInterceptor extends BaseInterceptor
         $this->HTTPmethod = $HTTPmethod;
     }
     
-    public function __call($method, $params)
+    public function Intercept($method)
     {
-        $decoratedController = $this->GetDecoratedController($this->controller);
-        $reflectedClass = new ReflectionClass($decoratedController);
-        if ($reflectedClass->HasMethod($method))
+        $comment = $method->GetDocComment();
+        
+        if ($comment && strpos($comment, " @post") && $this->HTTPmethod != "POST")
         {
-            $reflectedMethod = $reflectedClass->GetMethod($method);
-            $comment = $reflectedMethod->GetDocComment();
-            
-            if ($comment && strpos($comment, " @post") && $this->HTTPmethod != "POST")
-            {
-                die("Unauthorized");
-            }
+            die("Unauthorized");
         }
-        
-        $returnValue = $this->controller->$method($params[0]);
-        
-        return $returnValue;
     }
 }

@@ -1,23 +1,20 @@
 <?php
 class LoggedInInterceptor extends BaseInterceptor
-{    
-    public function __call($method, $params)
+{
+    private $isLoggedIn;
+    
+    public function __construct($controller, $isLoggedIn)
     {
-        $decoratedController = $this->GetDecoratedController($this->controller);
-        $reflectedClass = new ReflectionClass($decoratedController);
-        
-        if ($reflectedClass->HasMethod($method))
+        parent::__construct($controller);
+        $this->isLoggedIn = $isLoggedIn;
+    }
+    
+    protected function Intercept($method)
+    {
+        $comment = $method->GetDocComment();
+        if ($comment && strpos($comment, " @loggedIn") && !$this->isLoggedIn)
         {
-            $reflectedMethod = $reflectedClass->GetMethod($method);
-            $comment = $reflectedMethod->GetDocComment();
-            if ($comment && strpos($comment, " @loggedIn") && !$decoratedController->IsLoggedIn())
-            {
-                die("Unauthorized");
-            }
+            die("Unauthorized");
         }
-        
-        $returnValue = $this->controller->$method($params[0]);
-        
-        return $returnValue;
     }
 }

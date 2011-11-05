@@ -68,7 +68,7 @@ class frontController
         require_once $this->documentRoot . "/interceptors/HTTPMethodInterceptor.php";
         
         $controller = new HTTPMethodInterceptor($controller, $method);
-        $controller = new LoggedInInterceptor($controller, $method);
+        $controller = new LoggedInInterceptor($controller, $controller->IsLoggedIn());
         
         return $controller->$action($data);
     }
