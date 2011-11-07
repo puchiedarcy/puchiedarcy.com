@@ -9,7 +9,7 @@ class HTTPMethodInterceptor extends BaseInterceptor
         $this->HTTPmethod = $HTTPmethod;
     }
     
-    public function Intercept($method)
+    public function Intercept($method, &$params)
     {
         $comment = $method->GetDocComment();
         

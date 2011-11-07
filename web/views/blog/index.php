@@ -1,3 +1,4 @@
+<?php $front->Render($front, "master", "pager", array("pageData" => $viewModel->pageData)); ?>
 <div>
     <?php
     foreach ($viewModel->blogPosts as $blogPost)
@@ -23,3 +24,4 @@
     }
     ?>
 </div>
+<?php $front->Render($front, "master", "pager", array("pageData" => $viewModel->pageData)); ?>

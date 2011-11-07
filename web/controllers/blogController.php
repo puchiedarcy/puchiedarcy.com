@@ -3,32 +3,42 @@ class blogController extends baseController
 {
     public function index($data)
     {
-        $blogService = new BlogService();
-        $page = array_key_exists("page", $data) ? $data["page"] : 1;
+        $blogRepo = new BlogPostRepository();
+        $page = $data["page"];
+        $count = $blogRepo->CountBlogPosts();
         
-        $this->viewResult->viewModel->blogPosts = $blogService->GetBlogPosts($page);
+        $this->viewResult->viewModel->blogPosts = $blogRepo->GetBlogPosts($page);
         $this->viewResult->viewName = "index";
+        
+        $this->AttachPageData($page, $count, $blogRepo->PageSize(), "/blog?&");
         
         return $this->viewResult;
     }
     
     public function tags($data)
     {
-        $blogService = new BlogService();
-        $page = array_key_exists("page", $data) ? $data["page"] : 1;
+        $blogRepo = new BlogPostRepository();
+        $page = $data["page"];
+        $tag = $data["tag"];
+        $count = $blogRepo->CountTaggedBlogPosts($tag);
         
-        $this->viewResult->viewModel->blogPosts = $blogService->GetTaggedBlogPosts($data["tag"], $page);
+        $this->viewResult->viewModel->blogPosts = $blogRepo->GetTaggedBlogPosts($tag, $page);
         $this->viewResult->viewName = "index";
+        
+        $this->AttachPageData($page, $count, $blogRepo->PageSize(), "/blog/tags?tag=$tag&");
         
         return $this->viewResult;
     }
     
     public function single($data)
     {
-        $blogService = new BlogService();
+        $blogRepo = new BlogPostRepository();
+        $page = 1;
         
-        $this->viewResult->viewModel->blogPosts = $blogService->GetBlogPost($data["id"]);
+        $this->viewResult->viewModel->blogPosts = $blogRepo->GetBlogPost($data["id"]);
         $this->viewResult->viewName = "index";
+        
+        $this->AttachPageData($page, 1, $blogRepo->PageSize(), "/blog");
         
         return $this->viewResult;
     }
@@ -49,8 +59,8 @@ class blogController extends baseController
         
         $blogPost = new BlogPost(0, $data["title"], $data["body"], $tags, $data["date"]);
         
-        $blogService = new BlogService();
-        $blogService->AddBlogPost($blogPost);
+        $blogRepo = new BlogPostRepository();
+        $blogRepo->SaveBlogPost($blogPost);
         
         $this->viewResult->viewName = "index";
         

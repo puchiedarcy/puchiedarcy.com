@@ -33,7 +33,7 @@ abstract class BaseInterceptor
         if ($reflectedClass->HasMethod($method))
         {
             $reflectedMethod = $reflectedClass->GetMethod($method);
-            $this->Intercept($reflectedMethod);
+            $this->Intercept($reflectedMethod, $params);
         }
         
         $data = NULL;
@@ -47,5 +47,5 @@ abstract class BaseInterceptor
         return $returnValue;
     }
     
-    abstract protected function Intercept($method);
+    abstract protected function Intercept($method, &$params);
 }

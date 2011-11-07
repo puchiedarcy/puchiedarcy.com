@@ -1,7 +1,7 @@
 <?php
 class frontController
 {
-    private $libs = array("core", "services", "data");
+    private $libs = array("core", "data");
     private $documentRoot;
     private $resourceName;
     private $action;
@@ -44,6 +44,11 @@ class frontController
         return $this->data;
     }
     
+    public function Page()
+    {
+        return array_key_exists("page", $this->data) ? $this->data["page"] : 1;
+    }
+    
     public function Render($front, $resourceName, $action, $data)
     {
         $viewResult = $this->Act($resourceName, $action, $data, "GET");
@@ -66,9 +71,11 @@ class frontController
         require_once $this->documentRoot . "/interceptors/BaseInterceptor.php";
         require_once $this->documentRoot . "/interceptors/LoggedInInterceptor.php";
         require_once $this->documentRoot . "/interceptors/HTTPMethodInterceptor.php";
+        require_once $this->documentRoot . "/interceptors/PageInterceptor.php";
         
         $controller = new HTTPMethodInterceptor($controller, $method);
         $controller = new LoggedInInterceptor($controller, $controller->IsLoggedIn());
+        $controller = new PageInterceptor($controller, $this->Page());
         
         return $controller->$action($data);
     }

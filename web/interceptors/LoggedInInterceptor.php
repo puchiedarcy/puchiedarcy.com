@@ -9,7 +9,7 @@ class LoggedInInterceptor extends BaseInterceptor
         $this->isLoggedIn = $isLoggedIn;
     }
     
-    protected function Intercept($method)
+    protected function Intercept($method, &$params)
     {
         $comment = $method->GetDocComment();
         if ($comment && strpos($comment, " @loggedIn") && !$this->isLoggedIn)

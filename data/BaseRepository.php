@@ -15,6 +15,11 @@ abstract class BaseRepository
         mysql_select_db($mysql_database, $this->conn);
     }
     
+    public function PageSize()
+    {
+        return $this->pageSize;
+    }
+    
     function Select($query)
     {
         $results = array();

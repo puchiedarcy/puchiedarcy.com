@@ -42,4 +42,14 @@ abstract class baseController
     {
         session_destroy();
     }
+    
+    public function AttachPageData($page, $count, $pageSize, $pageLink)
+    {
+        $this->viewResult->viewModel->pageData->count = $count;
+        $this->viewResult->viewModel->pageData->page = $page;
+        $this->viewResult->viewModel->pageData->prevPage = max($page - 1, 1);
+        $this->viewResult->viewModel->pageData->lastPage = ceil($count / $pageSize);
+        $this->viewResult->viewModel->pageData->nextPage = min($page + 1, $this->viewResult->viewModel->pageData->lastPage);
+        $this->viewResult->viewModel->pageData->pageLink = $pageLink;
+    }
 }
