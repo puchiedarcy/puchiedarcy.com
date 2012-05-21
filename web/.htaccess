@@ -1,4 +1,4 @@
-RewriteEngine On
+RewriteEngine Off
 
 RewriteCond %{REQUEST_URI} !^/images
 RewriteCond %{REQUEST_URI} !^/css
